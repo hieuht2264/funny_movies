@@ -11,7 +11,9 @@
 #  updated_at  :datetime         not null
 #
 class Video < ApplicationRecord
+  acts_as_votable
+
   belongs_to :user
 
-   validates :url, presence: true
+  validates :url, presence: true
 end
