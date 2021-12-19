@@ -1,0 +1,33 @@
+!!!
+%html
+  %head
+    %title ShareVideos
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+  %body
+    .row
+      .col-12
+        %nav.navbar.navbar-light.bg-light.d-flex
+          %a.navbar-brand.mr-auto Funny Movies
+          - if current_user
+            %strong.mr-2= current_user.full_name
+
+            / %button.btn.mr-2.btn-primary{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button"}
+            /   Share a movie
+            = link_to 'Share a movie', new_video_path, class: 'btn btn-success my-2 my-sm-0 mr-2', "data-target" => "#share-modal", "data-toggle" => "modal", type: 'button'
+            = link_to 'Sign out', destroy_user_session_path, class: 'btn btn-primary my-2 my-sm-0', method: :delete
+            = render 'videos/form'
+          - else
+            = form_for(:user, url: session_path(:user), html: { class: 'form-signin' }) do |f|
+              .form-inline
+                .form-group.mr-2
+                  = f.email_field :email, placeholder: 'Email', autofocus: true, autocomplete: "email", class: 'form-control'
+                .form-group.mr-2
+                  = f.password_field :password, placeholder: 'Password', autocomplete: "current-password", class: 'form-control'
+                .actions.mr-2
+                  = f.submit "Signin", class: 'btn btn-outline-success my-2 my-sm-0'
+            = link_to 'Register', new_user_registration_path, class: 'btn btn-outline-success my-2 my-sm-0'
+    = yield

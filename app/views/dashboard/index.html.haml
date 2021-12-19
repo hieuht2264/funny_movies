@@ -1,0 +1,13 @@
+.row.search-form
+  .col-md-12
+    = render 'search', query: @q
+.row
+  .col-8.offset-2.mt-4
+    - @videos.each do |video|
+      .row.mt-4
+        .col-7
+          = video_embed_url_generator(video.url)
+        .col-5
+          %h4= video.title
+          %h6= video.decorate.owner_of_video
+          .description= video.description
