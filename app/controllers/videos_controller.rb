@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class VideosController < ApplicationController
   respond_to :js, :html, :json
 
@@ -16,9 +18,10 @@ class VideosController < ApplicationController
 
   def like
     @video = Video.find(params[:id])
-    if params[:format] == 'like'
+    case params[:format]
+    when 'like'
       @video.liked_by(current_user)
-    elsif params[:format] == 'unlike'
+    when 'unlike'
       @video.unliked_by(current_user)
     end
   end
