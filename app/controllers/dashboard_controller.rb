@@ -2,9 +2,8 @@
 
 class DashboardController < ApplicationController
   def index
-    # @videos = Video.all
-    @q = Video.ransack(search_params)
-    @videos = @q.result.includes(:user).order(id: :desc).page(params[:page])
+    @q = Video.order(id: :desc).ransack(search_params)
+    @videos = @q.result.includes(:user).page(params[:page])
   end
 
   private

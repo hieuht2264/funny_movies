@@ -11,3 +11,6 @@
           %h4= video.title
           %h6= video.decorate.owner_of_video
           .description= video.description
+.row
+  .col-8.offset-2.mt-4.mb-4
+    = paginate @videos
