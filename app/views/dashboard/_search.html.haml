@@ -1,6 +1,6 @@
 = search_form_for query, url: root_path do |f|
   .row.mt-4
-    .col-3.offset-2
+    .col-4.offset-2
       = f.search_field :title_cont, class: 'form-control', placeholder: 'Search by title movies'
     .col-2
       = f.submit 'Search', class: 'btn btn-primary'
