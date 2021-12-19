@@ -1,0 +1,18 @@
+AllCops:
+  TargetRubyVersion: 2.6.6
+  Exclude:
+    - "vendor/bundle/**/*"
+    - "node_modules/**/*"
+    - "frontend_web/node_modules/**/*"
+    - ",/**/*"
+    - ".git/**/*"
+    - "bin/*"
+    - "db/schema.rb"
+    - "db/migrate/*.rb"
+    - "db/seeds.rb"
+    - "db/seeds/*.rb"
+    - "log/**/*"
+    - "public/**/*"
+    - "tmp/**/*"
+    - "config/initializers/*"
+    - "lib/tasks/master_data/**/*"

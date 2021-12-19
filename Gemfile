@@ -47,7 +47,6 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'ransack'
 gem 'simple_form'
-gem 'uglifier', '>= 1.3.0'
 gem 'acts_as_votable'
 
 group :development, :test do
@@ -55,6 +54,11 @@ group :development, :test do
   gem 'pry'
   gem 'pry-rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'database_cleaner'
+  gem 'rubocop-rails'
 end
 
 group :production do
