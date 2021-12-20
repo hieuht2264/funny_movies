@@ -5,8 +5,7 @@ Rails.application.routes.draw do
 
   root to: 'dashboard#index'
   resources :videos, only: %i[new create] do
-    member do
-      put 'like' => 'videos#like'
-    end
+    resource :like, only: :update, controller: 'videos/like'
+    resource :dislike, only: :update, controller: 'videos/dislike'
   end
 end

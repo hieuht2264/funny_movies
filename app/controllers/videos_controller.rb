@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class VideosController < ApplicationController
-  respond_to :js, :html, :json
-
   def new
     @video = Video.new
   end
@@ -13,16 +11,6 @@ class VideosController < ApplicationController
       redirect_to root_path
     else
       render :new
-    end
-  end
-
-  def like
-    @video = Video.find(params[:id])
-    case params[:format]
-    when 'like'
-      @video.liked_by(current_user)
-    when 'unlike'
-      @video.unliked_by(current_user)
     end
   end
 

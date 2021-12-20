@@ -14,9 +14,6 @@
           %a.navbar-brand.mr-auto Funny Movies
           - if current_user
             %strong.mr-2= current_user.decorate.welcome
-
-            / %button.btn.mr-2.btn-primary{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button"}
-            /   Share a movie
             = link_to 'Share a movie', new_video_path, class: 'btn btn-success my-2 my-sm-0 mr-2', "data-target" => "#share-modal", "data-toggle" => "modal", type: 'button'
             = link_to 'Sign out', destroy_user_session_path, class: 'btn btn-primary my-2 my-sm-0', method: :delete
             = render 'videos/form'
