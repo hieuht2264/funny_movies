@@ -2,8 +2,7 @@
   .modal-dialog{:role => "document"}
     .modal-content
       .modal-header
-        / %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
-        %h3#myModalLabel Share a Youtube movie
+        %h3#share-modal Share a Youtube movie
       .modal-body
         = form_for :video, url: videos_path, method: :post do |f|
           .row

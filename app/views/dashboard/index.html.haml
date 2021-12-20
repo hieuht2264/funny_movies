@@ -10,10 +10,12 @@
         .col-5
           %h4= video.title
           %h6= video.decorate.owner_of_video
-          .description= video.description
-
-          .toggle-group{id: video.id}
+          .toggle-group.mb-1{id: video.id}
             = render 'videos/toggle_like_dislike', video: video
+          .description-group
+            .title.mb-2 Description:
+            .content= video.description
+
 .row
   .col-8.offset-2.mt-4.mb-4
     = paginate @videos

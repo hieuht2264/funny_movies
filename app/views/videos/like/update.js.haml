@@ -1,0 +1,1 @@
+$("##{@video.id.to_s}.toggle-group").html("#{j render(partial: 'videos/toggle_like_dislike', locals: { video: @video })}");
