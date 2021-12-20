@@ -11,13 +11,13 @@
         = f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: 'form-control', required: true
       .form-group
         = f.label :email
-        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', required: true
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', id: 'sign-up-email', required: true
       .form-group
         = f.label :password
         - if @minimum_password_length
           %em
             (#{@minimum_password_length} characters minimum)
-        = f.password_field :password, autocomplete: "new-password", class: 'form-control', required: true
+        = f.password_field :password, autocomplete: "new-password", class: 'form-control', id: 'sign-up-password', required: true
       .form-group
         = f.label :password_confirmation
         = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', required: true

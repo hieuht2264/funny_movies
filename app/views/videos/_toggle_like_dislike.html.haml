@@ -1,9 +1,9 @@
 %span.parent-likes{style: ('pointer-events: none' unless current_user)}
-  = link_to video_like_path(video), method: :patch, remote: true do
+  = link_to video_like_path(video), method: :patch, remote: true, class: 'like-link' do
     %span.like_count.mr-2{class: ('text-secondary' if (current_user && current_user.voted_down_on?(video)) || !current_user)}
       %i.icon.fa.fa-thumbs-up
         = video.get_likes.size
-  = link_to video_dislike_path(video), method: :patch, remote: true do
+  = link_to video_dislike_path(video), method: :patch, remote: true, class: 'dislike-link' do
     %span.dislike_count{class: ('text-secondary' if (current_user && current_user.voted_up_on?(video)) || !current_user)}
       %i.icon.fa.fa-thumbs-down
         = video.get_dislikes.size

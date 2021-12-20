@@ -7,6 +7,7 @@ require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'devise'
+require 'support/chrome'
 require 'support/factory_bot'
 require 'database_cleaner'
 require 'rspec/rails'
@@ -67,8 +68,10 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   # config.include Devise::Test::ControllerHelpers, :type => :controller
+  config.include Capybara::DSL
   config.include FactoryBot::Syntax::Methods
   config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::IntegrationHelpers, type: :system
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
