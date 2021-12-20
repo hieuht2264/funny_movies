@@ -6,7 +6,8 @@ class VideosController < ApplicationController
   end
 
   def create
-    @video = Video.new(video_params.merge(title: 'hieu', user_id: current_user.id, description: 'hoang'))
+    @video = Video.new(video_params.merge(title: Faker::Lorem.word, user_id: current_user.id,
+                                          description: Faker::Lorem.sentence))
     if @video.save
       flash[:notice] = 'Video was shared successfully.'
     else
