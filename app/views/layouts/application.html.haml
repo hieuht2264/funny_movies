@@ -25,7 +25,7 @@
                 .form-group.mr-2
                   = f.password_field :password, placeholder: 'Password', autocomplete: "current-password", class: 'form-control'
                 .actions.mr-2
-                  = f.submit "Signin", class: 'btn btn-success my-2 my-sm-0'
-            = link_to 'Register', new_user_registration_path, class: 'btn btn-primary my-2 my-sm-0'
+                  = f.submit "Sign in", class: 'btn btn-success my-2 my-sm-0'
+            = link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary my-2 my-sm-0'
     = render 'shared/flash_messages'
     = yield
