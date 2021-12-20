@@ -6,9 +6,8 @@ class Videos::LikeController < ApplicationController
   def update
     @video.liked_by(current_user)
     respond_to do |format|
-      format.js
+      format.js { render :update }
     end
-    head :no_content
   end
 
   private
