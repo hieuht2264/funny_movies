@@ -19,10 +19,11 @@
 #  cached_weighted_total   :integer          default(0)
 #  cached_weighted_average :float(24)        default(0.0)
 #
-class Video < ApplicationRecord
-  acts_as_votable
-
-  belongs_to :user
-
-  validates :url, :title, :description, presence: true
+FactoryBot.define do
+  factory :video do
+    url { 'https://www.youtube.com/watch?v=nC1pVNLbFwY' }
+    title { Faker::Lorem.word }
+    description { Faker::Lorem.sentence }
+    user
+  end
 end
