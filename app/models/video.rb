@@ -24,5 +24,5 @@ class Video < ApplicationRecord
 
   belongs_to :user
 
-  validates :url, :title, :description,  presence: true
+  validates :url, :title, :description, presence: true
 end

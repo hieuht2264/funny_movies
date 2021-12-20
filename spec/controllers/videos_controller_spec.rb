@@ -54,7 +54,6 @@ RSpec.describe VideosController, type: :controller do
       end
     end
 
-
     context 'when case valid youtube url' do
       let(:url) { 'https://www.youtube.com/watch?v=nfWlot6h_JM' }
 
