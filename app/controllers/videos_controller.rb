@@ -8,10 +8,11 @@ class VideosController < ApplicationController
   def create
     @video = Video.new(video_params.merge(title: 'hieu', user_id: current_user.id, description: 'hoang'))
     if @video.save
-      redirect_to root_path
+      flash[:notice] = 'Video was shared successfully.'
     else
-      render :new
+      flash[:alert] = 'Something went wrong. Url can not be blank.'
     end
+    redirect_to root_path
   end
 
   private

@@ -8,7 +8,7 @@ RSpec.describe DashboardController, type: :controller do
     sign_in(user)
   end
 
-  describe '#index' do
+  describe 'GET /dashboard' do
     it {
       get :index
       expect(response.status).to eq 200
